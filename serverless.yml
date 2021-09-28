@@ -18,7 +18,6 @@ provider:
           Resource:
             - arn:aws:dynamodb:us-east-1:532025139902:table/ItemTableNew
 
-
 functions:
   hello:
     handler: src/handler.hello
@@ -26,12 +25,12 @@ functions:
       - httpApi:
           path: /
           method: get
-insertItem:
-    handler: src/insertItem.handler
-    events: 
+  insertItem:
+     handler: src/insertItem.handler
+     events:
       - http:
-         path: /item
-         method: post
+          path: /item
+          method: post
 
 resources:
    Resources:
